@@ -92,17 +92,21 @@ Stop the loop and declare the project at its practical maximum when all of these
 
 At that point, produce a final report and stop.
 
-## Stop conditions (pause and ask me even with standing approval)
+## Handling risks and boundaries under full autonomy (L0)
 
-- A step would send sensitive, confidential, or government data to a remote model. Apply 21_DATA_BOUNDARY_AND_GOVERNANCE.md.
-- A remote Git action is required (push, open or merge a pull request, tag a release) but repository permissions are not clearly granted, or the action would touch main directly or rewrite shared history. Apply 26_GIT_GITHUB_WORKFLOW.md.
-- A budget or rate limit from the model-management folder would be exceeded.
-- A batch fails the quality gates or scores below usable, twice in a row.
-- A decision that is expensive to reverse is required and is not covered by an ADR you can write with confidence.
-- The repository cannot be read or files cannot be written.
-- Five consecutive tool or model errors.
+Under L0 fully autonomous, do not pause to ask me, even for P0 risks. Triage every risk and boundary:
+- Safe and reversible (no irreversible decision, no security or data boundary, undoable via branch and pull request): implement it now behind the normal gates.
+- Requires a human decision (expensive to reverse, security boundary, or sending sensitive or government data to a remote model, or a remote Git action without granted permission): do not attempt it. Record it in TODO_BLOCKED.md with the evidence, the options, and a recommended default, mark the task reserved, and continue with all other unblocked work.
 
-Outside these, proceed to the end.
+This defers risk instead of blocking the run. The consolidated TODO_BLOCKED.md is presented to me at the end.
+
+The only events that end the run early, because they are capability failures and not decisions, are:
+
+- The repository cannot be read, or files cannot be written.
+- A required remote action is impossible because credentials are missing, after it has been recorded in TODO_BLOCKED.md.
+- Five consecutive unrecoverable tool or model errors on the same item, after error recovery has been tried.
+
+For everything else, including budget limits, gate failures, and irreversible or security sensitive items, do not stop the run: a budget or rate limit pause work that exceeds it and records the rest in TODO_BLOCKED.md; a batch that fails the gates twice is set aside in TODO_BLOCKED.md and the loop moves on; risky or irreversible items are deferred as above. Proceed to the end, then present TODO_BLOCKED.md.
 
 ## Final output
 
@@ -113,6 +117,7 @@ When the loop ends, produce MAXIMIZATION_REPORT.md under reports/ containing:
 - The gap closed against comparable projects.
 - Remaining P2 and lower items, and reserved frontier tasks.
 - Explored forks and their outcomes, with the recover refs of rejected options and their revisit triggers.
+- The consolidated TODO_BLOCKED.md: every deferred risky or irreversible item, with evidence, options, and a recommended default, for me to decide on.
 - The current scorecard and release readiness status.
 - An index of every file created, with absolute paths.
 

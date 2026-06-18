@@ -1,6 +1,6 @@
 {
   "name": "ai-project-acceleration-package-full-model-management",
-  "version": "3.7.0",
+  "version": "3.8.0",
   "created_utc": "2026-06-16T22:43:18.023777Z",
   "purpose": "Universal AI work package for existing codebases, with a frontier burst layer to extract and freeze maximum value from a powerful model that may be available only briefly.",
   "core_rule": "No task is done without proof.",
@@ -30,8 +30,9 @@
     "autonomy test",
     "megaprompt bootstrap"
   ],
-  "updated_utc": "2026-06-17T17:33:04.776797+00:00",
+  "updated_utc": "2026-06-18T14:16:21.381101+00:00",
   "new_in_v3": [
+    "L0 now truly removes human in the loop: risky or irreversible items are deferred to TODO_BLOCKED.md and the run continues, instead of stopping to ask. Only capability failures end a run.",
     "standing approval now implies L0 fully autonomous (removes the L1 phase-boundary pause that stopped runs after planning)",
     "Phase 5 implementation made mandatory in AUTORUN_MAX; analysis/plan files alone never count as done",
     "30_OVERSIGHT_AND_JOURNALING.md (initial one-time setup: human-in-the-loop level, info type and verbosity, full journaling; safe defaults if unanswered)",

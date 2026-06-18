@@ -24,6 +24,10 @@ This runs once, at the very start, before preflight. It is the single setup inte
 
 5. Journaling: confirm that the agent keeps a complete, append only journal of everything it undertakes. Default is yes. The journal is separate from the chat and survives the session.
 
+## L0 means truly no human in the loop
+
+L0 fully autonomous means the agent never hands control back to the human in the middle of a run, including for P0 risks. It does not ask the human to decide. Instead it triages and defers: anything safe and reversible is implemented now behind the gates; anything that would require a human decision (a decision expensive to reverse, a security boundary, or a data boundary) is not attempted, is recorded in TODO_BLOCKED.md with the evidence, the options, and a recommended default, marked reserved, and the run continues with all other work. The human reviews the consolidated TODO_BLOCKED.md at the very end, not during the run. The only events that still end a turn are the unrecoverable ones: the repository cannot be read or written, or a remote action is impossible without credentials. Those are capability failures, not requests for a decision.
+
 ## Standing approval overrides the default
 
 If the launch instruction grants standing approval to proceed through every phase and every batch without asking, that sets oversight to L0 fully autonomous. In L0 the agent does not pause at phase boundaries and does not treat planning as a stopping point. It runs end to end and reports at the finish. The only pauses are the hard safety stops. Do not downgrade L0 to L1 on your own; standing approval means autonomous.

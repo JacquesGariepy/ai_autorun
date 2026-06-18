@@ -41,7 +41,11 @@ For this to be automatic, the agent must have: read access to the repository, th
 - Every remaining task must be provable by a weaker model. If not, mark it blocked or reserved and say why.
 - Apply the data boundary before any remote call.
 
-## Stop conditions (the only reasons to pause and ask me)
+## Under full autonomy (L0), defer instead of asking
+
+If running L0 fully autonomous, do not hand control back for risky or irreversible items. Record them in TODO_BLOCKED.md with evidence, options, and a recommended default, and continue. Present the consolidated list at the end. The list below are capability failures that end the run, not requests for a decision.
+
+## Stop conditions (capability failures that end the run)
 
 - A step would send sensitive, confidential, or government data to a remote model.
 - A budget or rate limit from the model-management folder would be exceeded.
