@@ -1,0 +1,66 @@
+{
+  "type": "object",
+  "required": [
+    "summary",
+    "facts",
+    "assumptions",
+    "actions",
+    "risks",
+    "proof"
+  ],
+  "properties": {
+    "summary": {
+      "type": "string"
+    },
+    "facts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "risks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "proof": {
+      "type": "object",
+      "properties": {
+        "files_inspected": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "files_changed": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "commands": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "validation_result": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

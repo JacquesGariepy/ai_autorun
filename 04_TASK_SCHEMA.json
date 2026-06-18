@@ -1,0 +1,54 @@
+{
+  "id": "F001",
+  "source": "csv|issue|todo|readme|code_comment|audit|user_request|model_audit|security_audit",
+  "epic": "Core",
+  "feature": "Export",
+  "title": "Short task title",
+  "description": "Expected behavior",
+  "priority": "P0|P1|P2|P3",
+  "severity": "Critical|High|Medium|Low",
+  "estimated_effort": "S|M|L|XL",
+  "dependencies": [
+    "F000"
+  ],
+  "files_hint": [
+    "src/example.ts"
+  ],
+  "acceptance_criteria": [
+    "Given..., When..., Then..."
+  ],
+  "technical_constraints": [
+    "Respect existing architecture",
+    "No hardcoding"
+  ],
+  "test_required": true,
+  "ui_required": false,
+  "api_required": false,
+  "data_required": true,
+  "ai_required": false,
+  "model_required": "",
+  "status": "todo|ready|in_progress|blocked|partial|done|rejected|deferred|removed",
+  "risk": "Low|Medium|High|Critical",
+  "evidence_required": [
+    "build",
+    "tests",
+    "manual proof"
+  ],
+  "model_policy": {
+    "allowed_model_tiers": [
+      "small",
+      "standard",
+      "reasoning"
+    ],
+    "requires_human_approval": false,
+    "max_estimated_cost_usd": 1.0
+  },
+  "completion_proof": {
+    "commands": [],
+    "files_changed": [],
+    "tests": [],
+    "model_used": "",
+    "cost_usd": 0,
+    "notes": ""
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "version": "1.0.0",
+  "score_threshold": 75,
+  "evals": [
+    {
+      "id": "repo_truthfulness_001",
+      "task": "Analyze a codebase without trusting README claims.",
+      "scoring": {
+        "code_grounding": 20,
+        "no_hallucination": 20,
+        "actionability": 20,
+        "risk_detection": 20,
+        "clarity": 20
+      }
+    },
+    {
+      "id": "implementation_batch_001",
+      "task": "Implement 1 to 3 backlog tasks with tests and proof.",
+      "scoring": {
+        "acceptance_criteria": 25,
+        "minimal_diff": 15,
+        "tests": 20,
+        "no_regression": 20,
+        "proof": 20
+      }
+    }
+  ]
+}

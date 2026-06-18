@@ -1,0 +1,59 @@
+{
+  "version": "1.0.0",
+  "routing_rules": [
+    {
+      "task_type": "frontier_burst",
+      "required_tier": "frontier",
+      "allow_remote": true,
+      "requires_redaction": true,
+      "reason": "Reserve the frontier tier for decisions, the hardest problem, and oracle authoring. Never for mechanical work."
+    },
+    {
+      "task_type": "secret_scan",
+      "required_tier": "local",
+      "reason": "Sensitive data must not leave the machine."
+    },
+    {
+      "task_type": "architecture_mapping",
+      "required_tier": "reasoning",
+      "allow_remote": true,
+      "requires_redaction": true
+    },
+    {
+      "task_type": "simple_code_edit",
+      "required_tier": "standard",
+      "allow_remote": true,
+      "requires_redaction": true
+    },
+    {
+      "task_type": "mechanical_refactor",
+      "required_tier": "small",
+      "allow_remote": true,
+      "requires_redaction": true
+    },
+    {
+      "task_type": "security_review",
+      "required_tier": "reasoning",
+      "allow_remote": false,
+      "reason": "Use local or redacted context unless human approves remote use."
+    },
+    {
+      "task_type": "documentation_generation",
+      "required_tier": "standard",
+      "allow_remote": true,
+      "requires_redaction": true
+    }
+  ],
+  "escalation_rules": [
+    "Escalate to reasoning model only after a cheaper model fails validation.",
+    "Escalate when task risk is High or Critical.",
+    "Escalate when architecture or security decisions are involved.",
+    "Escalate to the frontier tier only for decisions that are expensive to reverse, the single hardest problem, or oracle authoring."
+  ],
+  "downgrade_rules": [
+    "Use small model for formatting, CSV cleanup, and mechanical updates.",
+    "Use local model for sensitive scans.",
+    "Use standard model for routine implementation.",
+    "After the frontier burst, route all execution to the cheapest tier that passes the oracle."
+  ]
+}

@@ -1,0 +1,24 @@
+# Example CI workflow. Adapt to the project stack and copy to .github/workflows/ci.yml at the repo root.
+# This is a language agnostic skeleton. Replace the placeholder steps with the project's real commands.
+name: ci
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # - name: Setup toolchain
+      #   run: <install the language toolchain>
+      - name: Install
+        run: echo "replace with the project install command"
+      - name: Lint
+        run: echo "replace with the project lint command"
+      - name: Build
+        run: echo "replace with the project build command"
+      - name: Test
+        run: echo "replace with the project test command"
+      - name: Security scan
+        run: echo "replace with a dependency and secret scan"

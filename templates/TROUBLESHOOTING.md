@@ -1,0 +1,4 @@
+# Troubleshooting
+
+| problem | cause | fix |
+|---|---|---|

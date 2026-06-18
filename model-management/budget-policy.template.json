@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0",
+  "currency": "USD",
+  "limits": {
+    "per_request": 1.0,
+    "per_batch": 10.0,
+    "per_day": 50.0,
+    "per_project": 500.0
+  },
+  "stop_conditions": [
+    "cost_exceeds_batch_limit",
+    "cost_exceeds_daily_limit",
+    "five_consecutive_model_errors",
+    "three_consecutive_schema_failures",
+    "average_score_below_threshold",
+    "rate_limit_repeated",
+    "provider_degraded",
+    "unexpected_model_change"
+  ],
+  "requires_human_approval_above_usd": 25.0
+}

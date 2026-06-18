@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "defaults": {
+    "initial_parallelism": 1,
+    "max_parallelism": 3,
+    "backoff_strategy": "exponential",
+    "max_retries": 3,
+    "retry_on": [
+      429,
+      500,
+      502,
+      503,
+      504
+    ],
+    "do_not_retry_on": [
+      400,
+      401,
+      403,
+      404
+    ]
+  },
+  "canary": {
+    "enabled": true,
+    "first_batch_size": 3,
+    "must_pass_before_parallelism": true
+  }
+}

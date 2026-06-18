@@ -1,0 +1,2 @@
+id,source,epic,feature,title,description,priority,severity,estimated_effort,dependencies,files_hint,acceptance_criteria,technical_constraints,test_required,ui_required,api_required,data_required,ai_required,model_required,status,notes
+F001,csv,Core,Example,Example feature,"Describe expected behavior.",P0,High,M,"","src/...","Criterion 1; Criterion 2; Criterion 3","Respect existing architecture; no hardcoding",true,false,false,true,false,"",todo,""

@@ -1,0 +1,110 @@
+{
+  "version": "1.0.0",
+  "default_policy": "balanced",
+  "providers": [
+    {
+      "provider": "frontier",
+      "enabled": false,
+      "api_key_env": "FRONTIER_API_KEY",
+      "note": "Point this at the strongest model currently available. Fill id when a model arrives.",
+      "models": [
+        {
+          "id": "FILL_ON_ARRIVAL",
+          "tier": "frontier",
+          "use_cases": [
+            "architecture_decisions",
+            "hardest_problem_solving",
+            "oracle_authoring",
+            "threat_modeling",
+            "frozen_plan_generation"
+          ],
+          "allowed_data": [
+            "non_sensitive_code",
+            "public_docs",
+            "redacted_context"
+          ],
+          "max_input_tokens": null,
+          "max_output_tokens": 8192,
+          "cost_class": "high",
+          "availability": "window_or_stable",
+          "status": "assess_on_arrival"
+        }
+      ]
+    },
+    {
+      "provider": "openai",
+      "enabled": false,
+      "api_key_env": "OPENAI_API_KEY",
+      "models": [
+        {
+          "id": "gpt-5.5",
+          "tier": "reasoning",
+          "use_cases": [
+            "architecture",
+            "complex debugging",
+            "security review",
+            "planning"
+          ],
+          "allowed_data": [
+            "non_sensitive_code",
+            "public_docs"
+          ],
+          "max_input_tokens": null,
+          "max_output_tokens": 4096,
+          "cost_class": "high",
+          "status": "candidate"
+        }
+      ]
+    },
+    {
+      "provider": "anthropic",
+      "enabled": false,
+      "api_key_env": "ANTHROPIC_API_KEY",
+      "models": [
+        {
+          "id": "claude-sonnet",
+          "tier": "standard",
+          "use_cases": [
+            "code review",
+            "implementation",
+            "documentation"
+          ],
+          "allowed_data": [
+            "non_sensitive_code",
+            "public_docs"
+          ],
+          "max_input_tokens": null,
+          "max_output_tokens": 4096,
+          "cost_class": "medium",
+          "status": "candidate"
+        }
+      ]
+    },
+    {
+      "provider": "local",
+      "enabled": true,
+      "api_key_env": "",
+      "models": [
+        {
+          "id": "local-default",
+          "tier": "local",
+          "use_cases": [
+            "sensitive_code_scan",
+            "classification",
+            "drafting",
+            "offline_mode"
+          ],
+          "allowed_data": [
+            "sensitive_code",
+            "private_docs",
+            "secrets_redacted"
+          ],
+          "max_input_tokens": null,
+          "max_output_tokens": 2048,
+          "cost_class": "none",
+          "status": "preferred_for_sensitive_data"
+        }
+      ]
+    }
+  ]
+}
