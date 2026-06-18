@@ -1,4 +1,4 @@
-# AI Project Acceleration Package, version 3
+# AI Project Acceleration Package
 
 Drop this into any existing software project as `/ai-work`. It prepares you to extract maximum value from an AI agent, and in particular to be ready the moment a much more capable model becomes available, possibly for a short window.
 
