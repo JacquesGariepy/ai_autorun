@@ -1,68 +1,107 @@
 {
-  "name": "ai-project-acceleration-package-full-model-management",
+  "name": "ai_autorun",
   "version": "3.7.0",
-  "created_utc": "2026-06-16T22:43:18.023777Z",
-  "purpose": "Universal AI work package for existing codebases, with a frontier burst layer to extract and freeze maximum value from a powerful model that may be available only briefly.",
-  "core_rule": "No task is done without proof.",
+  "repository": "https://github.com/JacquesGariepy/ai_autorun",
+  "purpose": "Self driving AI work package for a project, new or existing. One path launches it; it audits, decides, plans, and builds, following Git and GitHub best practices, working as a coordinated engineering team, exploring real forks, recovering from errors, and journaling everything. Includes a frontier burst layer to extract and freeze maximum value from a powerful model that may be available only briefly.",
+  "core_rule": "No task is done without proof. Analysis and plans alone never count as done.",
+  "the_one_input": "The only human input is the path to a run file. Everything else is auto detected by the preflight, with safe defaults recorded in reports/ENV_PROFILE.md.",
+  "run_files": {
+    "AUTORUN_MAX.md": "Full build. Discovers every task, audits, researches comparable projects, plans, then implements in a proven loop with branches, pull requests, tests, and gates, until the project reaches its practical maximum.",
+    "AUTORUN.md": "Frontier burst. Extracts decisions, the hardest problem, and the oracle, and freezes them into files. Does not implement.",
+    "MEGAPROMPT.md": "One shot bootstrap for an agent that cannot read or write files. Returns artifacts in the conversation.",
+    "00_MASTER_PROMPT.md": "Manual, staged workflow driven by the human via prompts 00 to 15."
+  },
+  "triggers": {
+    "full_build_autonomous": "Execute AUTORUN_MAX.md at ./ai_autorun/AUTORUN_MAX.md. You have my standing approval to proceed through every phase and every batch without asking me between steps. Implement real code changes in the loop, not only audit files. Stop only on the stop conditions defined in the file. Produce saved files and working code with proof, not conversation.",
+    "burst": "Execute AUTORUN.md at ./ai_autorun/AUTORUN.md. You have my standing approval to proceed through every step without asking me between steps. Stop only on the stop conditions defined in the file. Produce saved files, not conversation.",
+    "resume_implementation": "Execute AUTORUN_MAX.md at ./ai_autorun/AUTORUN_MAX.md. Oversight: L0 fully autonomous. Read 20_SESSION_HANDOFF.md, skip re-analysis, go straight to Phase 5. Implement real code changes on branches with tests and proof. A run that produces only analysis or plan files is incomplete. Stop only on the hard safety stops defined in the file."
+  },
+  "oversight_levels": {
+    "L0": "Fully autonomous. No pause at phase boundaries, no stop after planning. Standing approval implies L0.",
+    "L1": "Checkpoints at phase boundaries, before merges to main, and before remote actions.",
+    "L2": "Approve each batch plan before implementation.",
+    "L3": "Approve each significant action."
+  },
+  "safety_stops": [
+    "Sensitive, confidential, or government data would be sent to a remote model.",
+    "A remote Git action is required without granted permission, or would touch main directly or rewrite shared history.",
+    "A budget or rate limit would be exceeded.",
+    "A decision expensive to reverse is required and no record covers it.",
+    "The repository cannot be read or files cannot be written.",
+    "Repeated unrecoverable errors."
+  ],
   "includes": [
-    "project analysis",
-    "backlog normalization",
-    "CSV task execution",
+    "preflight auto configuration",
+    "oversight setup and full journaling",
+    "project analysis and product reality report",
+    "task source discovery across CSV, code markers, docs, and tests",
+    "backlog normalization and triage",
     "unfinished work audit",
     "hardcoding audit",
     "security audit",
-    "privacy audit",
-    "AI system audit",
-    "model management",
-    "prompt management",
-    "cost control",
-    "rate limit control",
+    "privacy and governance, with Law 25 and GDPR note",
+    "similar projects research and gap analysis",
+    "AI and agent system audit",
+    "architecture decision records",
+    "hardest problem solution with an oracle",
+    "exploration and spikes across all spheres",
+    "error and failure recovery loop",
+    "Git and GitHub workflow",
+    "role orchestration as a coordinated team",
+    "model management, routing, cost, and rate limits",
     "evaluation harness",
-    "implementation batches",
-    "proof matrix",
+    "implementation batches with proof matrix",
+    "quality gates and scorecard",
     "release readiness",
-    "frontier burst protocol",
-    "frontier question bank",
+    "frontier burst protocol and question bank",
     "model arrival checklist",
     "capture and freeze",
     "session handoff continuity",
-    "data boundary and governance",
-    "autonomy test",
     "megaprompt bootstrap"
   ],
-  "updated_utc": "2026-06-17T17:33:04.776797+00:00",
-  "new_in_v3": [
-    "standing approval now implies L0 fully autonomous (removes the L1 phase-boundary pause that stopped runs after planning)",
-    "Phase 5 implementation made mandatory in AUTORUN_MAX; analysis/plan files alone never count as done",
-    "30_OVERSIGHT_AND_JOURNALING.md (initial one-time setup: human-in-the-loop level, info type and verbosity, full journaling; safe defaults if unanswered)",
-    "universal exploration across all spheres plus an error and failure recovery loop in 29",
-    "templates/JOURNAL.md",
-    "29_EXPLORATION_AND_SPIKES.md (explore real forks on parallel branches with commits and PRs, evaluate, converge, keep every path recoverable and revisitable)",
-    "templates/EXPERIMENT_LOG.md",
-    "templates/OPTION_COMPARISON.md",
-    "28_PREFLIGHT_AUTOCONFIG.md (auto-detects environment, stack, git host, permissions, web, data sensitivity; safe defaults; no setup questions)",
-    "26_GIT_GITHUB_WORKFLOW.md (Git/GitHub best practices: branches, conventional commits, PRs, review, CI, protected main, semver)",
-    "27_ROLE_ORCHESTRATION.md (coordinated engineering org: role chain, gates, parallelization)",
-    "git/ helpers: branching strategy, commit convention, PR template, code review checklist, example CI",
-    "AUTORUN_MAX.md (self-driving maximization: discover all tasks, audit, research similar projects online, plan, implement in a proven loop)",
-    "23_TASK_SOURCE_DISCOVERY.md",
-    "24_SIMILAR_PROJECTS_RESEARCH.md",
-    "25_MAXIMIZATION_LOOP.md",
-    "templates/MAXIMIZATION_REPORT.md",
-    "location-independent check scripts (no hardcoded ai-work/ prefix)",
-    "templates/ADR_TEMPLATE.md",
-    "AUTORUN.md (single trigger, self driving)",
-    "16_FRONTIER_BURST_PROTOCOL.md",
-    "17_FRONTIER_QUESTION_BANK.md",
-    "18_MODEL_ARRIVAL_CHECKLIST.md",
-    "19_CAPTURE_AND_FREEZE.md",
-    "20_SESSION_HANDOFF.md",
-    "21_DATA_BOUNDARY_AND_GOVERNANCE.md",
-    "22_QUICKSTART.md",
-    "MEGAPROMPT.md",
-    "GLOSSARY.md",
-    "templates/EXECUTOR_GUIDE.md",
-    "templates/AUTONOMY_TEST.md",
-    "frontier tier in model-registry and routing-policy"
-  ]
+  "file_map": {
+    "00_to_15": "Master prompt and staged manual prompts.",
+    "16_to_22": "Frontier burst protocol, question bank, arrival checklist, capture and freeze, handoff, data boundary, quickstart.",
+    "23_to_30": "Task source discovery, similar projects research, maximization loop, Git and GitHub workflow, role orchestration, preflight autoconfig, exploration and spikes, oversight and journaling.",
+    "AUTORUN.md, AUTORUN_MAX.md, MEGAPROMPT.md": "Run files.",
+    "model-management": "Registry, routing, budget, rate limits, evals, decision records.",
+    "git": "Branching strategy, commit convention, pull request template, code review checklist, example CI.",
+    "templates": "Output templates, including proof matrix, scorecard, experiment log, journal, autonomy test, ADR.",
+    "scripts": "validate_package.py and location independent structure checks.",
+    "reports, adr, batch-reports, experiments, logs, outputs": "Where the agent writes its work."
+  },
+  "changelog": {
+    "3.7.0": [
+      "Standing approval now implies L0 fully autonomous, removing the L1 phase boundary pause that could stop a run after planning.",
+      "Phase 5 implementation made mandatory in AUTORUN_MAX; analysis and plan files alone never count as done."
+    ],
+    "3.6.0": [
+      "30_OVERSIGHT_AND_JOURNALING.md: one time setup for human in the loop level, information type and verbosity, and full journaling, with safe defaults.",
+      "Universal exploration across all spheres and an error and failure recovery loop in 29.",
+      "templates/JOURNAL.md."
+    ],
+    "3.5.0": [
+      "29_EXPLORATION_AND_SPIKES.md: explore real forks on parallel branches with commits and pull requests, evaluate, converge, keep every path recoverable.",
+      "templates/EXPERIMENT_LOG.md and templates/OPTION_COMPARISON.md."
+    ],
+    "3.4.0": [
+      "28_PREFLIGHT_AUTOCONFIG.md: auto detects environment, stack, Git host, permissions, web access, and data sensitivity, with safe defaults and no setup questions."
+    ],
+    "3.3.0": [
+      "26_GIT_GITHUB_WORKFLOW.md: branches, conventional commits, pull requests, review, CI, protected main, semantic versioning.",
+      "27_ROLE_ORCHESTRATION.md: coordinated engineering org with a role chain, gates, and parallelization.",
+      "git/ helpers: branching strategy, commit convention, pull request template, code review checklist, example CI."
+    ],
+    "3.2.0": [
+      "AUTORUN_MAX.md: self driving maximization that discovers all tasks, audits, researches similar projects, plans, and implements in a proven loop.",
+      "23_TASK_SOURCE_DISCOVERY.md, 24_SIMILAR_PROJECTS_RESEARCH.md, 25_MAXIMIZATION_LOOP.md, templates/MAXIMIZATION_REPORT.md."
+    ],
+    "3.1.0": [
+      "AUTORUN.md: single trigger, self driving burst.",
+      "Location independent check scripts and templates/ADR_TEMPLATE.md."
+    ],
+    "3.0.0": [
+      "Frontier burst layer 16 to 22, MEGAPROMPT.md, GLOSSARY.md, executor guide and autonomy test templates, provider agnostic frontier tier."
+    ]
+  }
 }
