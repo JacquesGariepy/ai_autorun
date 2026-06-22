@@ -6,6 +6,8 @@ This file defines the continuous improvement loop and what maximum means, so the
 
 Discover, audit, plan, implement a proven batch, validate, score, reprioritize, repeat. Each pass compounds small proven improvements. Real quality is reached by many validated steps, not by one large change.
 
+The loop has two fuels: fixing what exists, and creating what is missing. When the corrective backlog runs dry, the loop does not stop, it switches fuel and regenerates new work from similar projects research, the completeness matrix, the opportunity list, and feature generation. Maximization means pushing both quality and capability, not only cleaning the current code. An empty marker sweep is a signal to regenerate, not to halt.
+
 ## The quality bar the project aims for
 
 A maximized project, where applicable to its category, reaches a strong bar on every axis:
@@ -37,3 +39,4 @@ Diminishing returns is a real stop. When the next batch would cost more than the
 - A task counts as done only with proof. No proof, not done.
 - The scorecard measures proven quality, not effort or output length.
 - Do not inflate the backlog with low value busywork to appear productive. Value times provability decides priority.
+- The anti busywork rule forbids emitting useless or un-wired code. It does not forbid designing and implementing genuinely new, provable features. When the corrective backlog is empty, generating valuable new features is the work, not busywork.

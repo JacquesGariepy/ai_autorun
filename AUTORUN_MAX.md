@@ -80,6 +80,17 @@ For each batch:
 
 After every few batches, re run the relevant audits so the backlog reflects new reality, and reprioritize.
 
+## When the backlog looks empty, regenerate before stopping
+
+An empty backlog is not the end. A source sweep that finds no code markers means the corrective backlog is exhausted, not that the project is maximized. Before considering the loop done, regenerate new provable work:
+
+1. Re run similar projects research, 24_SIMILAR_PROJECTS_RESEARCH.md, and refresh the gap analysis and the opportunity list against the current state. With web access, look again for what comparable and best in class projects offer that this project does not.
+2. Re run the feature completeness matrix and look for partial, missing, or weak areas, and for the next horizon features on the roadmap.
+3. Generate candidate features and improvements as new backlog items, each with acceptance criteria and a proof requirement. Where the best shape is unclear, use exploration and spikes, 29_EXPLORATION_AND_SPIKES.md, to try options and let evidence choose.
+4. Triage the new items. Implement everything that is safe and provable. Defer the gated ones to TODO_BLOCKED.md.
+
+Only when this regeneration itself yields no new safe, provable work, after a genuine search and not just a marker sweep, is the loop allowed to end. Distinguish clearly in the journal: corrective backlog exhausted is not the same as project maximized. Do not stop on the former.
+
 ## Definition of maximum (when to stop the loop)
 
 Stop the loop and declare the project at its practical maximum when all of these hold, per 25_MAXIMIZATION_LOOP.md:

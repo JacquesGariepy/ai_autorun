@@ -1,6 +1,6 @@
 {
   "name": "ai-project-acceleration-package-full-model-management",
-  "version": "3.8.0",
+  "version": "3.9.0",
   "created_utc": "2026-06-16T22:43:18.023777Z",
   "purpose": "Universal AI work package for existing codebases, with a frontier burst layer to extract and freeze maximum value from a powerful model that may be available only briefly.",
   "core_rule": "No task is done without proof.",
@@ -30,8 +30,9 @@
     "autonomy test",
     "megaprompt bootstrap"
   ],
-  "updated_utc": "2026-06-18T14:16:21.381101+00:00",
+  "updated_utc": "2026-06-19T17:53:35.015385+00:00",
   "new_in_v3": [
+    "Regeneration loop: an empty corrective backlog reopens feature discovery (similar projects research, completeness matrix, opportunity list, feature generation) instead of stopping. The loop ends only when a full regeneration pass yields no new safe provable work.",
     "L0 now truly removes human in the loop: risky or irreversible items are deferred to TODO_BLOCKED.md and the run continues, instead of stopping to ask. Only capability failures end a run.",
     "standing approval now implies L0 fully autonomous (removes the L1 phase-boundary pause that stopped runs after planning)",
     "Phase 5 implementation made mandatory in AUTORUN_MAX; analysis/plan files alone never count as done",

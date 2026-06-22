@@ -21,6 +21,42 @@ Unzip the folder and place it anywhere in your project, for example at <repo>/ai
 
 The folder name does not matter. Every file resolves its references against its own folder. Only one rule: do not nest it twice, you should never have <repo>/ai-work/ai-work/AUTORUN.md. The only path you give the agent is the path to the run file you choose.
 
+## The most powerful launch (copy this)
+
+For the strongest run, full build in true autonomy, give the agent the project and paste this, replacing the path with yours:
+
+```
+Execute AUTORUN_MAX.md at ./ai_autorun/AUTORUN_MAX.md.
+
+Oversight: L0 fully autonomous. Do not hand control back to me during the run.
+For the oversight setup, do not ask me; use these settings. Decisions and risks,
+summary verbosity, full journaling on.
+
+Run end to end: do not pause at phase boundaries and do not stop after planning.
+Phase 5 implementation is mandatory. A run that produces only analysis or plan
+files is incomplete. Implement real code changes in the loop, on branches, with
+conventional commits, tests, and proof, behind the quality gates.
+
+For any risky or irreversible item (expensive to reverse, security, data boundary,
+or a remote action without permission): do not ask me and do not attempt it blindly.
+Record it in TODO_BLOCKED.md with evidence, options, and a recommended default,
+mark it reserved, and continue with all other work.
+
+When a genuine fork between viable approaches appears, explore the options on
+parallel branches, evaluate against the oracle and the scorecard, keep the winner,
+and preserve the rest as recoverable experiments. On any error or failure, run the
+recovery loop and try alternatives; never hide a failure or fake a success.
+
+The only events that end the run early are true capability failures: files cannot
+be written, or a remote action is impossible without credentials. Otherwise proceed
+to the end. Then present the MAXIMIZATION_REPORT.md and the consolidated
+TODO_BLOCKED.md for me to decide on.
+```
+
+To resume a previously analyzed run, add one line: Read 20_SESSION_HANDOFF.md, skip re-analysis, go straight to Phase 5.
+
+This single block encodes everything: real autonomy without handing control back, mandatory implementation, deferral of risky items to TODO_BLOCKED.md instead of blocking, fork exploration, error recovery, and full journaling. For it to mean anything, the agent must be able to edit and execute files on the repository. With a command line agent or an IDE extension it runs Phase 5 and produces commits. If you still get only analysis files, the agent lacks code tools; reports/ENV_PROFILE.md confirms this in its detected tools list.
+
 ## The run files, at a glance
 
 | File | What it does | Use it when |
